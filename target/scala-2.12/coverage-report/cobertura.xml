@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage 
+line-rate="0.42" lines-valid="123" lines-covered="52" branches-valid="26" branches-covered="15" branch-rate="0.58" complexity="0" version="1.0" timestamp="1684850107474">
+    <sources>
+        <source>--source</source>
+        <source>E:/Downloads/td3_scoverage/td3_scoverage/src/main/scala</source>
+    </sources>
+    <packages>
+        <package name="fr.esgi.iabd.tictactoe" line-rate="0.42" branch-rate="0.58" complexity="0">
+            <classes>
+                <class 
+                name="fr.esgi.iabd.tictactoe.TicTacToe" filename="fr/esgi/iabd/tictactoe/TicTacToe.scala" line-rate="0.42" branch-rate="0.58" complexity="0">
+                    <methods>
+                        <method 
+                        name="fr.esgi.iabd.tictactoe/TicTacToe/display" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="43" hits="0" branch="false"/>
+                                <line number="43" hits="0" branch="false"/>
+                                <line number="42" hits="0" branch="false"/>
+                                <line number="44" hits="0" branch="false"/>
+                            </lines>
+</method>
+                        <method 
+                        name="fr.esgi.iabd.tictactoe/TicTacToe/play" signature="()V" line-rate="0.78" branch-rate="0.50" complexity="0">
+                            <lines>
+                                <line number="55" hits="1" branch="false"/>
+                                <line number="54" hits="1" branch="false"/>
+                                <line number="54" hits="1" branch="false"/>
+                                <line number="55" hits="1" branch="false"/>
+                                <line number="55" hits="1" branch="false"/>
+                                <line number="54" hits="0" branch="true"/>
+                                <line number="54" hits="0" branch="false"/>
+                                <line number="54" hits="1" branch="true"/>
+                                <line number="55" hits="1" branch="false"/>
+                            </lines>
+</method>
+                        <method 
+                        name="fr.esgi.iabd.tictactoe/TicTacToe/horizontalVictory" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="96" hits="1" branch="false"/>
+                                <line number="99" hits="1" branch="false"/>
+                                <line number="101" hits="1" branch="true"/>
+                                <line number="98" hits="1" branch="false"/>
+                                <line number="98" hits="1" branch="false"/>
+                                <line number="98" hits="1" branch="false"/>
+                                <line number="99" hits="1" branch="false"/>
+                                <line number="95" hits="1" branch="false"/>
+                                <line number="101" hits="1" branch="false"/>
+                                <line number="98" hits="1" branch="false"/>
+                                <line number="99" hits="1" branch="true"/>
+                                <line number="98" hits="1" branch="true"/>
+                                <line number="98" hits="1" branch="false"/>
+                                <line number="98" hits="1" branch="false"/>
+                                <line number="96" hits="1" branch="true"/>
+                            </lines>
+</method>
+                        <method name="fr.esgi.iabd.tictactoe/TicTacToe/run" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="22" hits="0" branch="false"/>
+                                <line number="30" hits="0" branch="false"/>
+                                <line number="25" hits="0" branch="false"/>
+                                <line number="36" hits="0" branch="false"/>
+                                <line number="27" hits="0" branch="false"/>
+                                <line number="26" hits="0" branch="false"/>
+                                <line number="29" hits="0" branch="false"/>
+                                <line number="20" hits="0" branch="false"/>
+                                <line number="23" hits="0" branch="false"/>
+                                <line number="36" hits="0" branch="false"/>
+                                <line number="22" hits="0" branch="false"/>
+                                <line number="32" hits="0" branch="false"/>
+                                <line number="37" hits="0" branch="false"/>
+                                <line number="26" hits="0" branch="false"/>
+                                <line number="27" hits="0" branch="false"/>
+                            </lines>
+                        </method>
+                        <method 
+                        name="fr.esgi.iabd.tictactoe/TicTacToe/victory" signature="()V" line-rate="0.26" branch-rate="0.44" complexity="0">
+                            <lines>
+                                <line number="67" hits="1" branch="true"/>
+                                <line number="76" hits="0" branch="false"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="77" hits="0" branch="true"/>
+                                <line number="69" hits="1" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="66" hits="1" branch="false"/>
+                                <line number="73" hits="0" branch="false"/>
+                                <line number="70" hits="0" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="67" hits="0" branch="false"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="70" hits="0" branch="true"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="65" hits="1" branch="false"/>
+                                <line number="68" hits="0" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="68" hits="1" branch="false"/>
+                                <line number="76" hits="0" branch="false"/>
+                                <line number="68" hits="1" branch="true"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="73" hits="0" branch="false"/>
+                                <line number="77" hits="0" branch="false"/>
+                                <line number="69" hits="1" branch="false"/>
+                                <line number="66" hits="1" branch="false"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="71" hits="0" branch="true"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="67" hits="1" branch="false"/>
+                                <line number="70" hits="0" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="65" hits="1" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="74" hits="0" branch="true"/>
+                                <line number="73" hits="0" branch="true"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="69" hits="1" branch="true"/>
+                                <line number="67" hits="0" branch="true"/>
+                                <line number="70" hits="0" branch="true"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="68" hits="0" branch="true"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="76" hits="0" branch="true"/>
+                                <line number="66" hits="1" branch="true"/>
+                                <line number="75" hits="0" branch="false"/>
+                                <line number="65" hits="1" branch="true"/>
+                                <line number="72" hits="0" branch="false"/>
+                                <line number="66" hits="1" branch="true"/>
+                                <line number="69" hits="1" branch="true"/>
+                            </lines>
+</method>
+                        <method 
+                        name="fr.esgi.iabd.tictactoe/TicTacToe/player" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="60" hits="1" branch="false"/>
+                                <line number="61" hits="1" branch="false"/>
+                            </lines>
+</method>
+                        <method 
+                        name="fr.esgi.iabd.tictactoe/TicTacToe/verticalVictory" signature="()V" line-rate="0.87" branch-rate="0.75" complexity="0">
+                            <lines>
+                                <line number="85" hits="1" branch="false"/>
+                                <line number="87" hits="1" branch="false"/>
+                                <line number="82" hits="0" branch="false"/>
+                                <line number="85" hits="1" branch="false"/>
+                                <line number="89" hits="1" branch="true"/>
+                                <line number="89" hits="1" branch="false"/>
+                                <line number="85" hits="1" branch="false"/>
+                                <line number="81" hits="1" branch="false"/>
+                                <line number="87" hits="1" branch="false"/>
+                                <line number="85" hits="1" branch="false"/>
+                                <line number="82" hits="0" branch="true"/>
+                                <line number="87" hits="1" branch="true"/>
+                                <line number="85" hits="1" branch="false"/>
+                                <line number="84" hits="1" branch="true"/>
+                                <line number="85" hits="1" branch="false"/>
+                            </lines>
+</method>
+                        <method 
+                        name="fr.esgi.iabd.tictactoe/TicTacToe/main" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="11" hits="0" branch="false"/>
+                                <line number="14" hits="0" branch="false"/>
+                                <line number="9" hits="0" branch="false"/>
+                                <line number="10" hits="0" branch="false"/>
+                                <line number="12" hits="0" branch="false"/>
+                                <line number="8" hits="0" branch="false"/>
+                            </lines>
+</method>
+                    </methods>
+                    <lines>
+                        <line number="67" hits="1" branch="true"/>
+                        <line number="85" hits="1" branch="false"/>
+                        <line number="76" hits="0" branch="false"/>
+                        <line number="96" hits="1" branch="false"/>
+                        <line number="99" hits="1" branch="false"/>
+                        <line number="87" hits="1" branch="false"/>
+                        <line number="43" hits="0" branch="false"/>
+                        <line number="82" hits="0" branch="false"/>
+                        <line number="101" hits="1" branch="true"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="77" hits="0" branch="true"/>
+                        <line number="69" hits="1" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="98" hits="1" branch="false"/>
+                        <line number="66" hits="1" branch="false"/>
+                        <line number="55" hits="1" branch="false"/>
+                        <line number="73" hits="0" branch="false"/>
+                        <line number="70" hits="0" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="60" hits="1" branch="false"/>
+                        <line number="67" hits="0" branch="false"/>
+                        <line number="22" hits="0" branch="false"/>
+                        <line number="30" hits="0" branch="false"/>
+                        <line number="54" hits="1" branch="false"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="70" hits="0" branch="true"/>
+                        <line number="98" hits="1" branch="false"/>
+                        <line number="85" hits="1" branch="false"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="89" hits="1" branch="true"/>
+                        <line number="25" hits="0" branch="false"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="65" hits="1" branch="false"/>
+                        <line number="54" hits="1" branch="false"/>
+                        <line number="68" hits="0" branch="false"/>
+                        <line number="36" hits="0" branch="false"/>
+                        <line number="11" hits="0" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="14" hits="0" branch="false"/>
+                        <line number="27" hits="0" branch="false"/>
+                        <line number="89" hits="1" branch="false"/>
+                        <line number="98" hits="1" branch="false"/>
+                        <line number="68" hits="1" branch="false"/>
+                        <line number="99" hits="1" branch="false"/>
+                        <line number="85" hits="1" branch="false"/>
+                        <line number="95" hits="1" branch="false"/>
+                        <line number="76" hits="0" branch="false"/>
+                        <line number="68" hits="1" branch="true"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="73" hits="0" branch="false"/>
+                        <line number="77" hits="0" branch="false"/>
+                        <line number="81" hits="1" branch="false"/>
+                        <line number="69" hits="1" branch="false"/>
+                        <line number="66" hits="1" branch="false"/>
+                        <line number="26" hits="0" branch="false"/>
+                        <line number="9" hits="0" branch="false"/>
+                        <line number="101" hits="1" branch="false"/>
+                        <line number="43" hits="0" branch="false"/>
+                        <line number="87" hits="1" branch="false"/>
+                        <line number="55" hits="1" branch="false"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="98" hits="1" branch="false"/>
+                        <line number="29" hits="0" branch="false"/>
+                        <line number="85" hits="1" branch="false"/>
+                        <line number="20" hits="0" branch="false"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="71" hits="0" branch="true"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="67" hits="1" branch="false"/>
+                        <line number="70" hits="0" branch="false"/>
+                        <line number="42" hits="0" branch="false"/>
+                        <line number="55" hits="1" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="23" hits="0" branch="false"/>
+                        <line number="65" hits="1" branch="false"/>
+                        <line number="10" hits="0" branch="false"/>
+                        <line number="54" hits="0" branch="true"/>
+                        <line number="36" hits="0" branch="false"/>
+                        <line number="99" hits="1" branch="true"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="74" hits="0" branch="true"/>
+                        <line number="82" hits="0" branch="true"/>
+                        <line number="87" hits="1" branch="true"/>
+                        <line number="98" hits="1" branch="true"/>
+                        <line number="98" hits="1" branch="false"/>
+                        <line number="73" hits="0" branch="true"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="85" hits="1" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="69" hits="1" branch="true"/>
+                        <line number="67" hits="0" branch="true"/>
+                        <line number="70" hits="0" branch="true"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="54" hits="0" branch="false"/>
+                        <line number="84" hits="1" branch="true"/>
+                        <line number="61" hits="1" branch="false"/>
+                        <line number="98" hits="1" branch="false"/>
+                        <line number="22" hits="0" branch="false"/>
+                        <line number="32" hits="0" branch="false"/>
+                        <line number="68" hits="0" branch="true"/>
+                        <line number="37" hits="0" branch="false"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="26" hits="0" branch="false"/>
+                        <line number="12" hits="0" branch="false"/>
+                        <line number="76" hits="0" branch="true"/>
+                        <line number="85" hits="1" branch="false"/>
+                        <line number="66" hits="1" branch="true"/>
+                        <line number="75" hits="0" branch="false"/>
+                        <line number="54" hits="1" branch="true"/>
+                        <line number="65" hits="1" branch="true"/>
+                        <line number="96" hits="1" branch="true"/>
+                        <line number="72" hits="0" branch="false"/>
+                        <line number="27" hits="0" branch="false"/>
+                        <line number="66" hits="1" branch="true"/>
+                        <line number="69" hits="1" branch="true"/>
+                        <line number="55" hits="1" branch="false"/>
+                        <line number="44" hits="0" branch="false"/>
+                        <line number="8" hits="0" branch="false"/>
+                    </lines>
+</class>
+            </classes>
+        </package>
+    </packages>
+</coverage>

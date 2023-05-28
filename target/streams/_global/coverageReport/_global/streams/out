@@ -1,0 +1,11 @@
+[0m[[0m[0minfo[0m] [0m[0mWaiting for measurement data to sync...[0m
+[0m[[0m[0minfo[0m] [0m[0mReading scoverage instrumentation [E:\Downloads\td3_scoverage\td3_scoverage\target\scala-2.12\scoverage-data\scoverage.coverage][0m
+[0m[[0m[0minfo[0m] [0m[0mReading scoverage measurements...[0m
+[0m[[0m[0minfo[0m] [0m[0mGenerating scoverage reports...[0m
+[0m[[0m[0minfo[0m] [0m[0mWritten Cobertura report [E:\Downloads\td3_scoverage\td3_scoverage\target\scala-2.12\coverage-report/cobertura.xml][0m
+[0m[[0m[0minfo[0m] [0m[0mWritten XML coverage report [E:\Downloads\td3_scoverage\td3_scoverage\target\scala-2.12\scoverage-report/scoverage.xml][0m
+[0m[[0m[0minfo[0m] [0m[0mWritten HTML coverage report [E:\Downloads\td3_scoverage\td3_scoverage\target\scala-2.12\scoverage-report/index.html][0m
+[0m[[0m[0minfo[0m] [0m[0mStatement coverage.: 42.28%[0m
+[0m[[0m[0minfo[0m] [0m[0mBranch coverage....: 57.69%[0m
+[0m[[0m[0minfo[0m] [0m[0mCoverage reports completed[0m
+[0m[[0m[0minfo[0m] [0m[0mAll done. Coverage was stmt=[42.28%] branch=[57.69%][0m

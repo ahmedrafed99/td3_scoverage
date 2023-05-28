@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(fr.esgi.iabd.tictactoe.TicTacToeSpec, org.scalatest.tools.Framework$$anon$1@6724a48f, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTicTacToeSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mplay[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should add X for player 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mvertialVictory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should validate vertical victory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mhorizontalVictory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should validate horizontal victory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mvictory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should find victory in any situation[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 376 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 4, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	fr.esgi.iabd.tictactoe.TicTacToeSpec[0m

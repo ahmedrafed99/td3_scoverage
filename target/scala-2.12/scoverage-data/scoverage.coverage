@@ -1,0 +1,2208 @@
+# Coverage data, format version: 2.0
+# Statement data:
+# - id
+# - source path
+# - package name
+# - class name
+# - class type (Class, Object or Trait)
+# - full class name
+# - method name
+# - start offset
+# - end offset
+# - line number
+# - symbol name
+# - tree name
+# - is branch
+# - invocations count
+# - is ignored
+# - description (can be multi-line)
+# '' sign
+# ------------------------------------------
+1
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+main
+158
+179
+10
+scala.collection.generic.GenericCompanion.apply
+Apply
+false
+0
+false
+scala.`package`.Vector.apply[String](".", ".", ".")
+
+2
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+main
+189
+210
+11
+scala.collection.generic.GenericCompanion.apply
+Apply
+false
+0
+false
+scala.`package`.Vector.apply[String](".", ".", ".")
+
+3
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+main
+220
+241
+12
+scala.collection.generic.GenericCompanion.apply
+Apply
+false
+0
+false
+scala.`package`.Vector.apply[String](".", ".", ".")
+
+4
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+main
+142
+249
+9
+scala.collection.generic.GenericCompanion.apply
+Apply
+false
+0
+false
+scala.`package`.Vector.apply[scala.collection.immutable.Vector[String]](scala.`package`.Vector.apply[String](".", ".", "."), scala.`package`.Vector.apply[String](".", ".", "."), scala.`package`.Vector.apply[String](".", ".", "."))
+
+5
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+main
+257
+258
+14
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+6
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+main
+131
+264
+8
+fr.esgi.iabd.tictactoe.TicTacToe.run
+Apply
+false
+0
+false
+TicTacToe.this.run(scala.`package`.Vector.apply[scala.collection.immutable.Vector[String]](scala.`package`.Vector.apply[String](".", ".", "."), scala.`package`.Vector.apply[String](".", ".", "."), scala.`package`.Vector.apply[String](".", ".", ".")), 0)
+
+7
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+348
+361
+20
+fr.esgi.iabd.tictactoe.TicTacToe.display
+Apply
+false
+0
+false
+TicTacToe.this.display(grid)
+
+8
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+373
+399
+22
+scala.StringContext.s
+Apply
+false
+0
+false
+scala.StringContext.apply("Player ", " action: ").s(player)
+
+9
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+367
+400
+22
+scala.Predef.print
+Apply
+false
+0
+false
+scala.Predef.print(scala.StringContext.apply("Player ", " action: ").s(player))
+
+10
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+417
+442
+23
+scala.io.StdIn.readLine
+Apply
+false
+0
+false
+scala.io.StdIn.readLine()
+
+11
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+448
+462
+25
+scala.Predef.println
+Apply
+false
+0
+false
+scala.Predef.println(input)
+
+12
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+475
+494
+26
+scala.Array.apply
+Apply
+false
+0
+false
+input.split(",").apply(0)
+
+13
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+475
+500
+26
+scala.collection.immutable.StringLike.toInt
+Select
+false
+0
+false
+scala.Predef.augmentString(input.split(",").apply(0)).toInt
+
+14
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+513
+532
+27
+scala.Array.apply
+Apply
+false
+0
+false
+input.split(",").apply(1)
+
+15
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+513
+538
+27
+scala.collection.immutable.StringLike.toInt
+Select
+false
+0
+false
+scala.Predef.augmentString(input.split(",").apply(1)).toInt
+
+16
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+558
+582
+29
+fr.esgi.iabd.tictactoe.TicTacToe.play
+Apply
+false
+0
+false
+TicTacToe.this.play(grid, x, y, player)
+
+17
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+603
+619
+30
+scala.Int.%
+Apply
+false
+0
+false
+player.+(1).%(2)
+
+18
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+638
+654
+32
+fr.esgi.iabd.tictactoe.TicTacToe.victory
+Apply
+false
+0
+false
+TicTacToe.this.victory(newGrid)
+
+19
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+729
+767
+36
+scala.StringContext.s
+Apply
+false
+0
+false
+scala.StringContext.apply("=====\\nThe winner is ", "\\n=====").s(winner)
+
+20
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+721
+768
+36
+scala.Predef.println
+Apply
+false
+0
+false
+scala.Predef.println(scala.StringContext.apply("=====\\nThe winner is ", "\\n=====").s(winner))
+
+21
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+run
+785
+808
+37
+fr.esgi.iabd.tictactoe.TicTacToe.run
+Apply
+false
+0
+false
+TicTacToe.this.run(newGrid, newPlayer)
+
+22
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+display
+918
+923
+43
+scala.Predef.print
+Apply
+false
+0
+false
+scala.Predef.print(x)
+
+23
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+display
+906
+924
+43
+scala.collection.IterableLike.foreach
+Apply
+false
+0
+false
+row.foreach[Unit]({
+  ((x: Any) => scala.Predef.print(x))
+})
+
+24
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+display
+931
+940
+44
+scala.Predef.println
+Apply
+false
+0
+false
+scala.Predef.println()
+
+25
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+display
+878
+946
+42
+scala.collection.IterableLike.foreach
+Apply
+false
+0
+false
+grid.foreach[Unit](((row: Vector[String]) => {
+  row.foreach[Unit]({
+    ((x: Any) => scala.Predef.print(x))
+  });
+  scala.Predef.println()
+}))
+
+26
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1099
+1110
+54
+scala.Int.==
+Apply
+false
+0
+false
+player.==(0)
+
+27
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1112
+1115
+54
+<nosymbol>
+Literal
+false
+0
+false
+"O"
+
+28
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1112
+1115
+54
+<nosymbol>
+Block
+true
+0
+false
+"O"
+
+29
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1121
+1124
+54
+<nosymbol>
+Literal
+false
+0
+false
+"X"
+
+30
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1121
+1124
+54
+<nosymbol>
+Block
+true
+0
+false
+"X"
+
+31
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1160
+1160
+55
+scala.collection.immutable.Vector.canBuildFrom
+TypeApply
+false
+0
+false
+immutable.this.Vector.canBuildFrom[String]
+
+32
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1145
+1171
+55
+scala.collection.immutable.Vector.updated
+ApplyToImplicitArgs
+false
+0
+false
+grid.apply(y).updated[String, scala.collection.immutable.Vector[String]](x, symbol)(immutable.this.Vector.canBuildFrom[String])
+
+33
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1141
+1141
+55
+scala.collection.immutable.Vector.canBuildFrom
+TypeApply
+false
+0
+false
+immutable.this.Vector.canBuildFrom[Vector[String]]
+
+34
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+play
+1129
+1172
+55
+scala.collection.immutable.Vector.updated
+ApplyToImplicitArgs
+false
+0
+false
+grid.updated[Vector[String], Vector[Vector[String]]](y, grid.apply(y).updated[String, scala.collection.immutable.Vector[String]](x, symbol)(immutable.this.Vector.canBuildFrom[String]))(immutable.this.Vector.canBuildFrom[Vector[String]])
+
+35
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+player
+1254
+1264
+60
+<nosymbol>
+Literal
+false
+0
+false
+"Player 0"
+
+36
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+player
+1283
+1293
+61
+<nosymbol>
+Literal
+false
+0
+false
+"Player 1"
+
+37
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1365
+1403
+65
+java.lang.Object.!=
+Apply
+false
+0
+false
+TicTacToe.this.horizontalVictory(grid, 0).!=("Nobody")
+
+38
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1405
+1431
+65
+fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+Apply
+false
+0
+false
+TicTacToe.this.horizontalVictory(grid, 0)
+
+39
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1405
+1431
+65
+fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+Block
+true
+0
+false
+TicTacToe.this.horizontalVictory(grid, 0)
+
+40
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1445
+1483
+66
+java.lang.Object.!=
+Apply
+false
+0
+false
+TicTacToe.this.horizontalVictory(grid, 1).!=("Nobody")
+
+41
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1485
+1511
+66
+fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+Apply
+false
+0
+false
+TicTacToe.this.horizontalVictory(grid, 1)
+
+42
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1485
+1511
+66
+fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+Block
+true
+0
+false
+TicTacToe.this.horizontalVictory(grid, 1)
+
+43
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1525
+1563
+67
+java.lang.Object.!=
+Apply
+false
+0
+false
+TicTacToe.this.horizontalVictory(grid, 2).!=("Nobody")
+
+44
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1565
+1591
+67
+fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+Apply
+false
+0
+false
+TicTacToe.this.horizontalVictory(grid, 2)
+
+45
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1565
+1591
+67
+fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+Block
+true
+0
+false
+TicTacToe.this.horizontalVictory(grid, 2)
+
+46
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1605
+1641
+68
+java.lang.Object.!=
+Apply
+false
+0
+false
+TicTacToe.this.verticalVictory(grid, 0).!=("Nobody")
+
+47
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1643
+1667
+68
+fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+Apply
+false
+0
+false
+TicTacToe.this.verticalVictory(grid, 0)
+
+48
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1643
+1667
+68
+fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+Block
+true
+0
+false
+TicTacToe.this.verticalVictory(grid, 0)
+
+49
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1681
+1717
+69
+java.lang.Object.!=
+Apply
+false
+0
+false
+TicTacToe.this.verticalVictory(grid, 1).!=("Nobody")
+
+50
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1719
+1743
+69
+fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+Apply
+false
+0
+false
+TicTacToe.this.verticalVictory(grid, 1)
+
+51
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1719
+1743
+69
+fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+Block
+true
+0
+false
+TicTacToe.this.verticalVictory(grid, 1)
+
+52
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1757
+1793
+70
+java.lang.Object.!=
+Apply
+false
+0
+false
+TicTacToe.this.verticalVictory(grid, 2).!=("Nobody")
+
+53
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1795
+1819
+70
+fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+Apply
+false
+0
+false
+TicTacToe.this.verticalVictory(grid, 2)
+
+54
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1795
+1819
+70
+fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+Block
+true
+0
+false
+TicTacToe.this.verticalVictory(grid, 2)
+
+55
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1845
+1846
+72
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+56
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1848
+1849
+72
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+57
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1854
+1857
+72
+<nosymbol>
+Literal
+false
+0
+false
+"."
+
+58
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1866
+1867
+72
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+59
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1869
+1870
+72
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+60
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1875
+1885
+72
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(1).apply(1)
+
+61
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1861
+1885
+72
+java.lang.Object.==
+Apply
+false
+0
+false
+grid.apply(0).apply(0).==(grid.apply(1).apply(1))
+
+62
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1894
+1895
+72
+<nosymbol>
+Literal
+false
+0
+false
+1
+
+63
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1897
+1898
+72
+<nosymbol>
+Literal
+false
+0
+false
+1
+
+64
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1903
+1913
+72
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(2).apply(2)
+
+65
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1889
+1913
+72
+java.lang.Object.==
+Apply
+false
+0
+false
+grid.apply(1).apply(1).==(grid.apply(2).apply(2))
+
+66
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1840
+1913
+72
+scala.Boolean.&&
+Apply
+false
+0
+false
+grid.apply(0).apply(0).!=(".").&&(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(2)))
+
+67
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1927
+1937
+73
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(0).apply(0)
+
+68
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1920
+1938
+73
+fr.esgi.iabd.tictactoe.TicTacToe.player
+Apply
+false
+0
+false
+TicTacToe.this.player(grid.apply(0).apply(0))
+
+69
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1920
+1938
+73
+fr.esgi.iabd.tictactoe.TicTacToe.player
+Block
+true
+0
+false
+TicTacToe.this.player(grid.apply(0).apply(0))
+
+70
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1964
+1965
+75
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+71
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1967
+1968
+75
+<nosymbol>
+Literal
+false
+0
+false
+2
+
+72
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1973
+1976
+75
+<nosymbol>
+Literal
+false
+0
+false
+"."
+
+73
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1985
+1986
+75
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+74
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1988
+1989
+75
+<nosymbol>
+Literal
+false
+0
+false
+2
+
+75
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1994
+2004
+75
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(1).apply(1)
+
+76
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1980
+2004
+75
+java.lang.Object.==
+Apply
+false
+0
+false
+grid.apply(0).apply(2).==(grid.apply(1).apply(1))
+
+77
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2013
+2014
+75
+<nosymbol>
+Literal
+false
+0
+false
+1
+
+78
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2016
+2017
+75
+<nosymbol>
+Literal
+false
+0
+false
+1
+
+79
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2022
+2032
+75
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(2).apply(0)
+
+80
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2008
+2032
+75
+java.lang.Object.==
+Apply
+false
+0
+false
+grid.apply(1).apply(1).==(grid.apply(2).apply(0))
+
+81
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1959
+2032
+75
+scala.Boolean.&&
+Apply
+false
+0
+false
+grid.apply(0).apply(2).!=(".").&&(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(0)))
+
+82
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2046
+2056
+76
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(0).apply(2)
+
+83
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2039
+2057
+76
+fr.esgi.iabd.tictactoe.TicTacToe.player
+Apply
+false
+0
+false
+TicTacToe.this.player(grid.apply(0).apply(2))
+
+84
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2039
+2057
+76
+fr.esgi.iabd.tictactoe.TicTacToe.player
+Block
+true
+0
+false
+TicTacToe.this.player(grid.apply(0).apply(2))
+
+85
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2067
+2075
+77
+<nosymbol>
+Literal
+false
+0
+false
+"Nobody"
+
+86
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+2067
+2075
+77
+<nosymbol>
+Block
+true
+0
+false
+"Nobody"
+
+87
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1948
+2075
+74
+<nosymbol>
+If
+true
+0
+false
+if (grid.apply(0).apply(2).!=(".").&&(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+  TicTacToe.this.player(grid.apply(0).apply(2))
+else
+  "Nobody"
+
+88
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1829
+2075
+71
+<nosymbol>
+If
+true
+0
+false
+if (grid.apply(0).apply(0).!=(".").&&(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+  TicTacToe.this.player(grid.apply(0).apply(0))
+else
+  if (grid.apply(0).apply(2).!=(".").&&(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+    TicTacToe.this.player(grid.apply(0).apply(2))
+  else
+    "Nobody"
+
+89
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1753
+2075
+70
+<nosymbol>
+If
+true
+0
+false
+if (TicTacToe.this.verticalVictory(grid, 2).!=("Nobody"))
+  TicTacToe.this.verticalVictory(grid, 2)
+else
+  if (grid.apply(0).apply(0).!=(".").&&(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+    TicTacToe.this.player(grid.apply(0).apply(0))
+  else
+    if (grid.apply(0).apply(2).!=(".").&&(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+      TicTacToe.this.player(grid.apply(0).apply(2))
+    else
+      "Nobody"
+
+90
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1677
+2075
+69
+<nosymbol>
+If
+true
+0
+false
+if (TicTacToe.this.verticalVictory(grid, 1).!=("Nobody"))
+  TicTacToe.this.verticalVictory(grid, 1)
+else
+  if (TicTacToe.this.verticalVictory(grid, 2).!=("Nobody"))
+    TicTacToe.this.verticalVictory(grid, 2)
+  else
+    if (grid.apply(0).apply(0).!=(".").&&(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+      TicTacToe.this.player(grid.apply(0).apply(0))
+    else
+      if (grid.apply(0).apply(2).!=(".").&&(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+        TicTacToe.this.player(grid.apply(0).apply(2))
+      else
+        "Nobody"
+
+91
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1601
+2075
+68
+<nosymbol>
+If
+true
+0
+false
+if (TicTacToe.this.verticalVictory(grid, 0).!=("Nobody"))
+  TicTacToe.this.verticalVictory(grid, 0)
+else
+  if (TicTacToe.this.verticalVictory(grid, 1).!=("Nobody"))
+    TicTacToe.this.verticalVictory(grid, 1)
+  else
+    if (TicTacToe.this.verticalVictory(grid, 2).!=("Nobody"))
+      TicTacToe.this.verticalVictory(grid, 2)
+    else
+      if (grid.apply(0).apply(0).!=(".").&&(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+        TicTacToe.this.player(grid.apply(0).apply(0))
+      else
+        if (grid.apply(0).apply(2).!=(".").&&(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+          TicTacToe.this.player(grid.apply(0).apply(2))
+        else
+          "Nobody"
+
+92
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1521
+2075
+67
+<nosymbol>
+If
+true
+0
+false
+if (TicTacToe.this.horizontalVictory(grid, 2).!=("Nobody"))
+  TicTacToe.this.horizontalVictory(grid, 2)
+else
+  if (TicTacToe.this.verticalVictory(grid, 0).!=("Nobody"))
+    TicTacToe.this.verticalVictory(grid, 0)
+  else
+    if (TicTacToe.this.verticalVictory(grid, 1).!=("Nobody"))
+      TicTacToe.this.verticalVictory(grid, 1)
+    else
+      if (TicTacToe.this.verticalVictory(grid, 2).!=("Nobody"))
+        TicTacToe.this.verticalVictory(grid, 2)
+      else
+        if (grid.apply(0).apply(0).!=(".").&&(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+          TicTacToe.this.player(grid.apply(0).apply(0))
+        else
+          if (grid.apply(0).apply(2).!=(".").&&(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+            TicTacToe.this.player(grid.apply(0).apply(2))
+          else
+            "Nobody"
+
+93
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+victory
+1441
+2075
+66
+<nosymbol>
+If
+true
+0
+false
+if (TicTacToe.this.horizontalVictory(grid, 1).!=("Nobody"))
+  TicTacToe.this.horizontalVictory(grid, 1)
+else
+  if (TicTacToe.this.horizontalVictory(grid, 2).!=("Nobody"))
+    TicTacToe.this.horizontalVictory(grid, 2)
+  else
+    if (TicTacToe.this.verticalVictory(grid, 0).!=("Nobody"))
+      TicTacToe.this.verticalVictory(grid, 0)
+    else
+      if (TicTacToe.this.verticalVictory(grid, 1).!=("Nobody"))
+        TicTacToe.this.verticalVictory(grid, 1)
+      else
+        if (TicTacToe.this.verticalVictory(grid, 2).!=("Nobody"))
+          TicTacToe.this.verticalVictory(grid, 2)
+        else
+          if (grid.apply(0).apply(0).!=(".").&&(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+            TicTacToe.this.player(grid.apply(0).apply(0))
+          else
+            if (grid.apply(0).apply(2).!=(".").&&(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&&(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+              TicTacToe.this.player(grid.apply(0).apply(2))
+            else
+              "Nobody"
+
+94
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2166
+2188
+81
+java.lang.Object.==
+Apply
+false
+0
+false
+grid.apply(0).apply(column).==(".")
+
+95
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2198
+2206
+82
+<nosymbol>
+Literal
+false
+0
+false
+"Nobody"
+
+96
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2198
+2206
+82
+<nosymbol>
+Block
+true
+0
+false
+"Nobody"
+
+97
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2244
+2245
+85
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+98
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2258
+2273
+85
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(1).apply(column)
+
+99
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2282
+2283
+85
+<nosymbol>
+Literal
+false
+0
+false
+1
+
+100
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2296
+2311
+85
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(2).apply(column)
+
+101
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2277
+2311
+85
+java.lang.Object.==
+Apply
+false
+0
+false
+grid.apply(1).apply(column).==(grid.apply(2).apply(column))
+
+102
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2239
+2311
+85
+scala.Boolean.&&
+Apply
+false
+0
+false
+grid.apply(0).apply(column).==(grid.apply(1).apply(column)).&&(grid.apply(1).apply(column).==(grid.apply(2).apply(column)))
+
+103
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2337
+2352
+87
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(0).apply(column)
+
+104
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2330
+2353
+87
+fr.esgi.iabd.tictactoe.TicTacToe.player
+Apply
+false
+0
+false
+TicTacToe.this.player(grid.apply(0).apply(column))
+
+105
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2330
+2353
+87
+fr.esgi.iabd.tictactoe.TicTacToe.player
+Block
+true
+0
+false
+TicTacToe.this.player(grid.apply(0).apply(column))
+
+106
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2377
+2385
+89
+<nosymbol>
+Literal
+false
+0
+false
+"Nobody"
+
+107
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2377
+2385
+89
+<nosymbol>
+Block
+true
+0
+false
+"Nobody"
+
+108
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+verticalVictory
+2226
+2393
+84
+<nosymbol>
+If
+true
+0
+false
+if (grid.apply(0).apply(column).==(grid.apply(1).apply(column)).&&(grid.apply(1).apply(column).==(grid.apply(2).apply(column))))
+  TicTacToe.this.player(grid.apply(0).apply(column))
+else
+  "Nobody"
+
+109
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2489
+2508
+95
+java.lang.Object.==
+Apply
+false
+0
+false
+grid.apply(row).apply(0).==(".")
+
+110
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2518
+2526
+96
+<nosymbol>
+Literal
+false
+0
+false
+"Nobody"
+
+111
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2518
+2526
+96
+<nosymbol>
+Block
+true
+0
+false
+"Nobody"
+
+112
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2560
+2561
+98
+<nosymbol>
+Literal
+false
+0
+false
+0
+
+113
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2566
+2578
+98
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(row).apply(1)
+
+114
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2592
+2593
+98
+<nosymbol>
+Literal
+false
+0
+false
+1
+
+115
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2598
+2610
+98
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(row).apply(2)
+
+116
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2582
+2610
+98
+java.lang.Object.==
+Apply
+false
+0
+false
+grid.apply(row).apply(1).==(grid.apply(row).apply(2))
+
+117
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2550
+2610
+98
+scala.Boolean.&&
+Apply
+false
+0
+false
+grid.apply(row).apply(0).==(grid.apply(row).apply(1)).&&(grid.apply(row).apply(1).==(grid.apply(row).apply(2)))
+
+118
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2629
+2641
+99
+scala.collection.immutable.Vector.apply
+Apply
+false
+0
+false
+grid.apply(row).apply(0)
+
+119
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2622
+2642
+99
+fr.esgi.iabd.tictactoe.TicTacToe.player
+Apply
+false
+0
+false
+TicTacToe.this.player(grid.apply(row).apply(0))
+
+120
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2622
+2642
+99
+fr.esgi.iabd.tictactoe.TicTacToe.player
+Block
+true
+0
+false
+TicTacToe.this.player(grid.apply(row).apply(0))
+
+121
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2666
+2674
+101
+<nosymbol>
+Literal
+false
+0
+false
+"Nobody"
+
+122
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2666
+2674
+101
+<nosymbol>
+Block
+true
+0
+false
+"Nobody"
+
+123
+E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+fr.esgi.iabd.tictactoe
+TicTacToe
+Object
+fr.esgi.iabd.tictactoe.TicTacToe
+horizontalVictory
+2546
+2682
+98
+<nosymbol>
+If
+true
+0
+false
+if (grid.apply(row).apply(0).==(grid.apply(row).apply(1)).&&(grid.apply(row).apply(1).==(grid.apply(row).apply(2))))
+  TicTacToe.this.player(grid.apply(row).apply(0))
+else
+  "Nobody"
+

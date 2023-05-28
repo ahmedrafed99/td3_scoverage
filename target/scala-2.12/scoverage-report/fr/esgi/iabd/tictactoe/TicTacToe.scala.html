@@ -1,0 +1,3196 @@
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title id="title">
+          fr\esgi\iabd\tictactoe\TicTacToe.scala.html
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/css/theme.default.min.css" type="text/css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/js/jquery.tablesorter.min.js"></script><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" type="text/css"/><script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script><script type="text/javascript">
+        $(document).ready(function() {$(".tablesorter").tablesorter();});
+      </script>
+        <style>
+          table.codegrid { font-family: monospace; font-size: 12px; width: auto!important; }table.statementlist { width: auto!important; font-size: 13px; } table.codegrid td { padding: 0!important; border: 0!important } table td.linenumber { width: 40px!important; } 
+        </style>
+      </head>
+      <body style="font-family: monospace;">
+        <ul class="nav nav-tabs">
+          <li>
+            <a href="#codegrid" data-toggle="tab">Codegrid</a>
+          </li>
+          <li>
+            <a href="#statementlist" data-toggle="tab">Statement List</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="codegrid">
+            <pre style='font-size: 12pt; font-family: courier, monospace;'>1 <span style=''>package fr.esgi.iabd.tictactoe
+</span>2 <span style=''>
+</span>3 <span style=''>import scala.annotation.tailrec
+</span>4 <span style=''>
+</span>5 <span style=''>object TicTacToe {
+</span>6 <span style=''>
+</span>7 <span style=''>  def main(args: Array[String]): Unit = {
+</span>8 <span style=''>    </span><span style='background: #F0ADAD'>run(
+</span>9 <span style=''></span><span style='background: #F0ADAD'>      Vector(
+</span>10 <span style=''></span><span style='background: #F0ADAD'>        Vector(&quot;.&quot;, &quot;.&quot;, &quot;.&quot;),
+</span>11 <span style=''></span><span style='background: #F0ADAD'>        Vector(&quot;.&quot;, &quot;.&quot;, &quot;.&quot;),
+</span>12 <span style=''></span><span style='background: #F0ADAD'>        Vector(&quot;.&quot;, &quot;.&quot;, &quot;.&quot;)
+</span>13 <span style=''></span><span style='background: #F0ADAD'>      ),
+</span>14 <span style=''></span><span style='background: #F0ADAD'>      0
+</span>15 <span style=''></span><span style='background: #F0ADAD'>    )</span><span style=''>
+</span>16 <span style=''>  }
+</span>17 <span style=''>
+</span>18 <span style=''>  @tailrec
+</span>19 <span style=''>  def run(grid: Vector[Vector[String]], player: Int): Unit = {
+</span>20 <span style=''>    </span><span style='background: #F0ADAD'>display(grid)</span><span style=''>
+</span>21 <span style=''>
+</span>22 <span style=''>    </span><span style='background: #F0ADAD'>print(s&quot;Player $player action: &quot;)</span><span style=''>
+</span>23 <span style=''>    val input = </span><span style='background: #F0ADAD'>scala.io.StdIn.readLine()</span><span style=''>
+</span>24 <span style=''>
+</span>25 <span style=''>    </span><span style='background: #F0ADAD'>println(input)</span><span style=''>
+</span>26 <span style=''>    val x = </span><span style='background: #F0ADAD'>input.split(&quot;,&quot;)(0).toInt</span><span style=''>
+</span>27 <span style=''>    val y = </span><span style='background: #F0ADAD'>input.split(&quot;,&quot;)(1).toInt</span><span style=''>
+</span>28 <span style=''>
+</span>29 <span style=''>    val newGrid = </span><span style='background: #F0ADAD'>play(grid, x, y, player)</span><span style=''>
+</span>30 <span style=''>    val newPlayer = </span><span style='background: #F0ADAD'>(player + 1) % 2</span><span style=''>
+</span>31 <span style=''>
+</span>32 <span style=''>    val winner = </span><span style='background: #F0ADAD'>victory(newGrid)</span><span style=''>
+</span>33 <span style=''>
+</span>34 <span style=''>    winner match {
+</span>35 <span style=''>      case &quot;Player 0&quot; | &quot;Player 1&quot; =&gt;
+</span>36 <span style=''>        </span><span style='background: #F0ADAD'>println(s&quot;=====\nThe winner is $winner\n=====&quot;)</span><span style=''>
+</span>37 <span style=''>      case _ =&gt; </span><span style='background: #F0ADAD'>run(newGrid, newPlayer)</span><span style=''>
+</span>38 <span style=''>    }
+</span>39 <span style=''>  }
+</span>40 <span style=''>
+</span>41 <span style=''>  def display(grid: Vector[Vector[String]]): Unit = {
+</span>42 <span style=''>    </span><span style='background: #F0ADAD'>grid.foreach { row =&gt;
+</span>43 <span style=''></span><span style='background: #F0ADAD'>      row.foreach(print)
+</span>44 <span style=''></span><span style='background: #F0ADAD'>      println()
+</span>45 <span style=''></span><span style='background: #F0ADAD'>    }</span><span style=''>
+</span>46 <span style=''>  }
+</span>47 <span style=''>
+</span>48 <span style=''>  def play(
+</span>49 <span style=''>      grid: Vector[Vector[String]],
+</span>50 <span style=''>      x: Int,
+</span>51 <span style=''>      y: Int,
+</span>52 <span style=''>      player: Int
+</span>53 <span style=''>  ): Vector[Vector[String]] = {
+</span>54 <span style=''>    val symbol = if (</span><span style='background: #AEF1AE'>player == 0</span><span style=''>) </span><span style='background: #F0ADAD'>&quot;O&quot;</span><span style=''> else </span><span style='background: #AEF1AE'>&quot;X&quot;</span><span style=''>
+</span>55 <span style=''>    </span><span style='background: #AEF1AE'>grid.updated(y, grid(y).updated(x, symbol))</span><span style=''>
+</span>56 <span style=''>  }
+</span>57 <span style=''>
+</span>58 <span style=''>  def player(symbol: String): String =
+</span>59 <span style=''>    symbol match {
+</span>60 <span style=''>      case &quot;O&quot; =&gt; </span><span style='background: #AEF1AE'>&quot;Player 0&quot;</span><span style=''>
+</span>61 <span style=''>      case _   =&gt; </span><span style='background: #AEF1AE'>&quot;Player 1&quot;</span><span style=''>
+</span>62 <span style=''>    }
+</span>63 <span style=''>
+</span>64 <span style=''>  def victory(grid: Vector[Vector[String]]): String = {
+</span>65 <span style=''>    if (</span><span style='background: #AEF1AE'>horizontalVictory(grid, 0) != &quot;Nobody&quot;</span><span style=''>) </span><span style='background: #AEF1AE'>horizontalVictory(grid, 0)</span><span style=''>
+</span>66 <span style=''>    else </span><span style='background: #AEF1AE'>if (horizontalVictory(grid, 1) != &quot;Nobody&quot;) horizontalVictory(grid, 1)
+</span>67 <span style=''></span><span style='background: #AEF1AE'>    else if (horizontalVictory(grid, 2) != &quot;Nobody&quot;) </span><span style='background: #F0ADAD'>horizontalVictory(grid, 2)</span><span style='background: #AEF1AE'>
+</span>68 <span style=''></span><span style='background: #AEF1AE'>    else if (verticalVictory(grid, 0) != &quot;Nobody&quot;) </span><span style='background: #F0ADAD'>verticalVictory(grid, 0)</span><span style='background: #AEF1AE'>
+</span>69 <span style=''></span><span style='background: #AEF1AE'>    else if (verticalVictory(grid, 1) != &quot;Nobody&quot;) verticalVictory(grid, 1)
+</span>70 <span style=''></span><span style='background: #AEF1AE'>    else </span><span style='background: #F0ADAD'>if (verticalVictory(grid, 2) != &quot;Nobody&quot;) verticalVictory(grid, 2)
+</span>71 <span style=''></span><span style='background: #F0ADAD'>    else if (
+</span>72 <span style=''></span><span style='background: #F0ADAD'>      grid(0)(0) != &quot;.&quot; &amp;&amp; grid(0)(0) == grid(1)(1) &amp;&amp; grid(1)(1) == grid(2)(2)
+</span>73 <span style=''></span><span style='background: #F0ADAD'>    ) player(grid(0)(0))
+</span>74 <span style=''></span><span style='background: #F0ADAD'>    else if (
+</span>75 <span style=''></span><span style='background: #F0ADAD'>      grid(0)(2) != &quot;.&quot; &amp;&amp; grid(0)(2) == grid(1)(1) &amp;&amp; grid(1)(1) == grid(2)(0)
+</span>76 <span style=''></span><span style='background: #F0ADAD'>    ) player(grid(0)(2))
+</span>77 <span style=''></span><span style='background: #F0ADAD'>    else &quot;Nobody&quot;</span><span style=''>
+</span>78 <span style=''>  }
+</span>79 <span style=''>
+</span>80 <span style=''>  def verticalVictory(grid: Vector[Vector[String]], column: Int): String = {
+</span>81 <span style=''>    if (</span><span style='background: #AEF1AE'>grid(0)(column) == &quot;.&quot;</span><span style=''>) {
+</span>82 <span style=''>      </span><span style='background: #F0ADAD'>&quot;Nobody&quot;</span><span style=''>
+</span>83 <span style=''>    } else {
+</span>84 <span style=''>      </span><span style='background: #AEF1AE'>if (
+</span>85 <span style=''></span><span style='background: #AEF1AE'>        grid(0)(column) == grid(1)(column) &amp;&amp; grid(1)(column) == grid(2)(column)
+</span>86 <span style=''></span><span style='background: #AEF1AE'>      ) {
+</span>87 <span style=''></span><span style='background: #AEF1AE'>        player(grid(0)(column))
+</span>88 <span style=''></span><span style='background: #AEF1AE'>      } else {
+</span>89 <span style=''></span><span style='background: #AEF1AE'>        &quot;Nobody&quot;
+</span>90 <span style=''></span><span style='background: #AEF1AE'>      }</span><span style=''>
+</span>91 <span style=''>    }
+</span>92 <span style=''>  }
+</span>93 <span style=''>
+</span>94 <span style=''>  def horizontalVictory(grid: Vector[Vector[String]], row: Int): String = {
+</span>95 <span style=''>    if (</span><span style='background: #AEF1AE'>grid(row)(0) == &quot;.&quot;</span><span style=''>) {
+</span>96 <span style=''>      </span><span style='background: #AEF1AE'>&quot;Nobody&quot;</span><span style=''>
+</span>97 <span style=''>    } else {
+</span>98 <span style=''>      </span><span style='background: #AEF1AE'>if (grid(row)(0) == grid(row)(1) &amp;&amp; grid(row)(1) == grid(row)(2)) {
+</span>99 <span style=''></span><span style='background: #AEF1AE'>        player(grid(row)(0))
+</span>100 <span style=''></span><span style='background: #AEF1AE'>      } else {
+</span>101 <span style=''></span><span style='background: #AEF1AE'>        &quot;Nobody&quot;
+</span>102 <span style=''></span><span style='background: #AEF1AE'>      }</span><span style=''>
+</span>103 <span style=''>    }
+</span>104 <span style=''>  }
+</span>105 <span style=''>}
+</span></pre>
+          </div>
+          <div class="tab-pane" id="statementlist">
+            <table cellspacing="0" cellpadding="0" class="table statementlist">
+      <tr>
+        <th>Line</th>
+        <th>Stmt Id</th>
+        <th>Pos</th>
+        <th>Tree</th>
+        <th>Symbol</th>
+        <th>Tests</th>
+        <th>Code</th>
+      </tr><tr>
+        <td>
+          8
+        </td>
+        <td>
+          6
+        </td>
+        <td>
+          131
+          -
+          264
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.run
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.run(scala.`package`.Vector.apply[scala.collection.immutable.Vector[String]](scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;), scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;), scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;)), 0)
+        </td>
+      </tr><tr>
+        <td>
+          9
+        </td>
+        <td>
+          4
+        </td>
+        <td>
+          142
+          -
+          249
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.generic.GenericCompanion.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.`package`.Vector.apply[scala.collection.immutable.Vector[String]](scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;), scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;), scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;))
+        </td>
+      </tr><tr>
+        <td>
+          10
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          158
+          -
+          179
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.generic.GenericCompanion.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          11
+        </td>
+        <td>
+          2
+        </td>
+        <td>
+          189
+          -
+          210
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.generic.GenericCompanion.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          12
+        </td>
+        <td>
+          3
+        </td>
+        <td>
+          220
+          -
+          241
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.generic.GenericCompanion.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.`package`.Vector.apply[String](&quot;.&quot;, &quot;.&quot;, &quot;.&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          14
+        </td>
+        <td>
+          5
+        </td>
+        <td>
+          257
+          -
+          258
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          20
+        </td>
+        <td>
+          7
+        </td>
+        <td>
+          348
+          -
+          361
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.display
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.display(grid)
+        </td>
+      </tr><tr>
+        <td>
+          22
+        </td>
+        <td>
+          8
+        </td>
+        <td>
+          373
+          -
+          399
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.StringContext.s
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.StringContext.apply(&quot;Player &quot;, &quot; action: &quot;).s(player)
+        </td>
+      </tr><tr>
+        <td>
+          22
+        </td>
+        <td>
+          9
+        </td>
+        <td>
+          367
+          -
+          400
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.print
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.print(scala.StringContext.apply(&quot;Player &quot;, &quot; action: &quot;).s(player))
+        </td>
+      </tr><tr>
+        <td>
+          23
+        </td>
+        <td>
+          10
+        </td>
+        <td>
+          417
+          -
+          442
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.io.StdIn.readLine
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.io.StdIn.readLine()
+        </td>
+      </tr><tr>
+        <td>
+          25
+        </td>
+        <td>
+          11
+        </td>
+        <td>
+          448
+          -
+          462
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(input)
+        </td>
+      </tr><tr>
+        <td>
+          26
+        </td>
+        <td>
+          13
+        </td>
+        <td>
+          475
+          -
+          500
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          scala.collection.immutable.StringLike.toInt
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.augmentString(input.split(&quot;,&quot;).apply(0)).toInt
+        </td>
+      </tr><tr>
+        <td>
+          26
+        </td>
+        <td>
+          12
+        </td>
+        <td>
+          475
+          -
+          494
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Array.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          input.split(&quot;,&quot;).apply(0)
+        </td>
+      </tr><tr>
+        <td>
+          27
+        </td>
+        <td>
+          14
+        </td>
+        <td>
+          513
+          -
+          532
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Array.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          input.split(&quot;,&quot;).apply(1)
+        </td>
+      </tr><tr>
+        <td>
+          27
+        </td>
+        <td>
+          15
+        </td>
+        <td>
+          513
+          -
+          538
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          scala.collection.immutable.StringLike.toInt
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.augmentString(input.split(&quot;,&quot;).apply(1)).toInt
+        </td>
+      </tr><tr>
+        <td>
+          29
+        </td>
+        <td>
+          16
+        </td>
+        <td>
+          558
+          -
+          582
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.play
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.play(grid, x, y, player)
+        </td>
+      </tr><tr>
+        <td>
+          30
+        </td>
+        <td>
+          17
+        </td>
+        <td>
+          603
+          -
+          619
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.%
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          player.+(1).%(2)
+        </td>
+      </tr><tr>
+        <td>
+          32
+        </td>
+        <td>
+          18
+        </td>
+        <td>
+          638
+          -
+          654
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.victory
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.victory(newGrid)
+        </td>
+      </tr><tr>
+        <td>
+          36
+        </td>
+        <td>
+          20
+        </td>
+        <td>
+          721
+          -
+          768
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(scala.StringContext.apply(&quot;=====\\nThe winner is &quot;, &quot;\\n=====&quot;).s(winner))
+        </td>
+      </tr><tr>
+        <td>
+          36
+        </td>
+        <td>
+          19
+        </td>
+        <td>
+          729
+          -
+          767
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.StringContext.s
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.StringContext.apply(&quot;=====\\nThe winner is &quot;, &quot;\\n=====&quot;).s(winner)
+        </td>
+      </tr><tr>
+        <td>
+          37
+        </td>
+        <td>
+          21
+        </td>
+        <td>
+          785
+          -
+          808
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.run
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.run(newGrid, newPlayer)
+        </td>
+      </tr><tr>
+        <td>
+          42
+        </td>
+        <td>
+          25
+        </td>
+        <td>
+          878
+          -
+          946
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.IterableLike.foreach
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.foreach[Unit](((row: Vector[String]) =&gt; {
+  row.foreach[Unit]({
+    ((x: Any) =&gt; scala.Predef.print(x))
+  });
+  scala.Predef.println()
+}))
+        </td>
+      </tr><tr>
+        <td>
+          43
+        </td>
+        <td>
+          23
+        </td>
+        <td>
+          906
+          -
+          924
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.IterableLike.foreach
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          row.foreach[Unit]({
+  ((x: Any) =&gt; scala.Predef.print(x))
+})
+        </td>
+      </tr><tr>
+        <td>
+          43
+        </td>
+        <td>
+          22
+        </td>
+        <td>
+          918
+          -
+          923
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.print
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.print(x)
+        </td>
+      </tr><tr>
+        <td>
+          44
+        </td>
+        <td>
+          24
+        </td>
+        <td>
+          931
+          -
+          940
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println()
+        </td>
+      </tr><tr>
+        <td>
+          54
+        </td>
+        <td>
+          26
+        </td>
+        <td>
+          1099
+          -
+          1110
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.==
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          player.==(0)
+        </td>
+      </tr><tr>
+        <td>
+          54
+        </td>
+        <td>
+          29
+        </td>
+        <td>
+          1121
+          -
+          1124
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;X&quot;
+        </td>
+      </tr><tr>
+        <td>
+          54
+        </td>
+        <td>
+          28
+        </td>
+        <td>
+          1112
+          -
+          1115
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;O&quot;
+        </td>
+      </tr><tr>
+        <td>
+          54
+        </td>
+        <td>
+          27
+        </td>
+        <td>
+          1112
+          -
+          1115
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;O&quot;
+        </td>
+      </tr><tr>
+        <td>
+          54
+        </td>
+        <td>
+          30
+        </td>
+        <td>
+          1121
+          -
+          1124
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;X&quot;
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          32
+        </td>
+        <td>
+          1145
+          -
+          1171
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          scala.collection.immutable.Vector.updated
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(y).updated[String, scala.collection.immutable.Vector[String]](x, symbol)(immutable.this.Vector.canBuildFrom[String])
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          31
+        </td>
+        <td>
+          1160
+          -
+          1160
+        </td>
+        <td>
+          TypeApply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.canBuildFrom
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          immutable.this.Vector.canBuildFrom[String]
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          34
+        </td>
+        <td>
+          1129
+          -
+          1172
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          scala.collection.immutable.Vector.updated
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.updated[Vector[String], Vector[Vector[String]]](y, grid.apply(y).updated[String, scala.collection.immutable.Vector[String]](x, symbol)(immutable.this.Vector.canBuildFrom[String]))(immutable.this.Vector.canBuildFrom[Vector[String]])
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          33
+        </td>
+        <td>
+          1141
+          -
+          1141
+        </td>
+        <td>
+          TypeApply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.canBuildFrom
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          immutable.this.Vector.canBuildFrom[Vector[String]]
+        </td>
+      </tr><tr>
+        <td>
+          60
+        </td>
+        <td>
+          35
+        </td>
+        <td>
+          1254
+          -
+          1264
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;Player 0&quot;
+        </td>
+      </tr><tr>
+        <td>
+          61
+        </td>
+        <td>
+          36
+        </td>
+        <td>
+          1283
+          -
+          1293
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;Player 1&quot;
+        </td>
+      </tr><tr>
+        <td>
+          65
+        </td>
+        <td>
+          38
+        </td>
+        <td>
+          1405
+          -
+          1431
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.horizontalVictory(grid, 0)
+        </td>
+      </tr><tr>
+        <td>
+          65
+        </td>
+        <td>
+          37
+        </td>
+        <td>
+          1365
+          -
+          1403
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.!=
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.horizontalVictory(grid, 0).!=(&quot;Nobody&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          65
+        </td>
+        <td>
+          39
+        </td>
+        <td>
+          1405
+          -
+          1431
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.horizontalVictory(grid, 0)
+        </td>
+      </tr><tr>
+        <td>
+          66
+        </td>
+        <td>
+          41
+        </td>
+        <td>
+          1485
+          -
+          1511
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.horizontalVictory(grid, 1)
+        </td>
+      </tr><tr>
+        <td>
+          66
+        </td>
+        <td>
+          40
+        </td>
+        <td>
+          1445
+          -
+          1483
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.!=
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.horizontalVictory(grid, 1).!=(&quot;Nobody&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          66
+        </td>
+        <td>
+          93
+        </td>
+        <td>
+          1441
+          -
+          2075
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          if (TicTacToe.this.horizontalVictory(grid, 1).!=(&quot;Nobody&quot;))
+  TicTacToe.this.horizontalVictory(grid, 1)
+else
+  if (TicTacToe.this.horizontalVictory(grid, 2).!=(&quot;Nobody&quot;))
+    TicTacToe.this.horizontalVictory(grid, 2)
+  else
+    if (TicTacToe.this.verticalVictory(grid, 0).!=(&quot;Nobody&quot;))
+      TicTacToe.this.verticalVictory(grid, 0)
+    else
+      if (TicTacToe.this.verticalVictory(grid, 1).!=(&quot;Nobody&quot;))
+        TicTacToe.this.verticalVictory(grid, 1)
+      else
+        if (TicTacToe.this.verticalVictory(grid, 2).!=(&quot;Nobody&quot;))
+          TicTacToe.this.verticalVictory(grid, 2)
+        else
+          if (grid.apply(0).apply(0).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+            TicTacToe.this.player(grid.apply(0).apply(0))
+          else
+            if (grid.apply(0).apply(2).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+              TicTacToe.this.player(grid.apply(0).apply(2))
+            else
+              &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          66
+        </td>
+        <td>
+          42
+        </td>
+        <td>
+          1485
+          -
+          1511
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.horizontalVictory(grid, 1)
+        </td>
+      </tr><tr>
+        <td>
+          67
+        </td>
+        <td>
+          92
+        </td>
+        <td>
+          1521
+          -
+          2075
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          if (TicTacToe.this.horizontalVictory(grid, 2).!=(&quot;Nobody&quot;))
+  TicTacToe.this.horizontalVictory(grid, 2)
+else
+  if (TicTacToe.this.verticalVictory(grid, 0).!=(&quot;Nobody&quot;))
+    TicTacToe.this.verticalVictory(grid, 0)
+  else
+    if (TicTacToe.this.verticalVictory(grid, 1).!=(&quot;Nobody&quot;))
+      TicTacToe.this.verticalVictory(grid, 1)
+    else
+      if (TicTacToe.this.verticalVictory(grid, 2).!=(&quot;Nobody&quot;))
+        TicTacToe.this.verticalVictory(grid, 2)
+      else
+        if (grid.apply(0).apply(0).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+          TicTacToe.this.player(grid.apply(0).apply(0))
+        else
+          if (grid.apply(0).apply(2).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+            TicTacToe.this.player(grid.apply(0).apply(2))
+          else
+            &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          67
+        </td>
+        <td>
+          44
+        </td>
+        <td>
+          1565
+          -
+          1591
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.horizontalVictory(grid, 2)
+        </td>
+      </tr><tr>
+        <td>
+          67
+        </td>
+        <td>
+          43
+        </td>
+        <td>
+          1525
+          -
+          1563
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.!=
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.horizontalVictory(grid, 2).!=(&quot;Nobody&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          67
+        </td>
+        <td>
+          45
+        </td>
+        <td>
+          1565
+          -
+          1591
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.horizontalVictory
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.horizontalVictory(grid, 2)
+        </td>
+      </tr><tr>
+        <td>
+          68
+        </td>
+        <td>
+          47
+        </td>
+        <td>
+          1643
+          -
+          1667
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.verticalVictory(grid, 0)
+        </td>
+      </tr><tr>
+        <td>
+          68
+        </td>
+        <td>
+          46
+        </td>
+        <td>
+          1605
+          -
+          1641
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.!=
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.verticalVictory(grid, 0).!=(&quot;Nobody&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          68
+        </td>
+        <td>
+          91
+        </td>
+        <td>
+          1601
+          -
+          2075
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          if (TicTacToe.this.verticalVictory(grid, 0).!=(&quot;Nobody&quot;))
+  TicTacToe.this.verticalVictory(grid, 0)
+else
+  if (TicTacToe.this.verticalVictory(grid, 1).!=(&quot;Nobody&quot;))
+    TicTacToe.this.verticalVictory(grid, 1)
+  else
+    if (TicTacToe.this.verticalVictory(grid, 2).!=(&quot;Nobody&quot;))
+      TicTacToe.this.verticalVictory(grid, 2)
+    else
+      if (grid.apply(0).apply(0).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+        TicTacToe.this.player(grid.apply(0).apply(0))
+      else
+        if (grid.apply(0).apply(2).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+          TicTacToe.this.player(grid.apply(0).apply(2))
+        else
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          68
+        </td>
+        <td>
+          48
+        </td>
+        <td>
+          1643
+          -
+          1667
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.verticalVictory(grid, 0)
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          50
+        </td>
+        <td>
+          1719
+          -
+          1743
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.verticalVictory(grid, 1)
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          49
+        </td>
+        <td>
+          1681
+          -
+          1717
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.!=
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.verticalVictory(grid, 1).!=(&quot;Nobody&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          90
+        </td>
+        <td>
+          1677
+          -
+          2075
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          if (TicTacToe.this.verticalVictory(grid, 1).!=(&quot;Nobody&quot;))
+  TicTacToe.this.verticalVictory(grid, 1)
+else
+  if (TicTacToe.this.verticalVictory(grid, 2).!=(&quot;Nobody&quot;))
+    TicTacToe.this.verticalVictory(grid, 2)
+  else
+    if (grid.apply(0).apply(0).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+      TicTacToe.this.player(grid.apply(0).apply(0))
+    else
+      if (grid.apply(0).apply(2).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+        TicTacToe.this.player(grid.apply(0).apply(2))
+      else
+        &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          51
+        </td>
+        <td>
+          1719
+          -
+          1743
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.verticalVictory(grid, 1)
+        </td>
+      </tr><tr>
+        <td>
+          70
+        </td>
+        <td>
+          53
+        </td>
+        <td>
+          1795
+          -
+          1819
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.verticalVictory(grid, 2)
+        </td>
+      </tr><tr>
+        <td>
+          70
+        </td>
+        <td>
+          89
+        </td>
+        <td>
+          1753
+          -
+          2075
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          if (TicTacToe.this.verticalVictory(grid, 2).!=(&quot;Nobody&quot;))
+  TicTacToe.this.verticalVictory(grid, 2)
+else
+  if (grid.apply(0).apply(0).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+    TicTacToe.this.player(grid.apply(0).apply(0))
+  else
+    if (grid.apply(0).apply(2).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+      TicTacToe.this.player(grid.apply(0).apply(2))
+    else
+      &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          70
+        </td>
+        <td>
+          52
+        </td>
+        <td>
+          1757
+          -
+          1793
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.!=
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.verticalVictory(grid, 2).!=(&quot;Nobody&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          70
+        </td>
+        <td>
+          54
+        </td>
+        <td>
+          1795
+          -
+          1819
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.verticalVictory
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.verticalVictory(grid, 2)
+        </td>
+      </tr><tr>
+        <td>
+          71
+        </td>
+        <td>
+          88
+        </td>
+        <td>
+          1829
+          -
+          2075
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          if (grid.apply(0).apply(0).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(2))))
+  TicTacToe.this.player(grid.apply(0).apply(0))
+else
+  if (grid.apply(0).apply(2).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+    TicTacToe.this.player(grid.apply(0).apply(2))
+  else
+    &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          59
+        </td>
+        <td>
+          1869
+          -
+          1870
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          62
+        </td>
+        <td>
+          1894
+          -
+          1895
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          1
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          56
+        </td>
+        <td>
+          1848
+          -
+          1849
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          65
+        </td>
+        <td>
+          1889
+          -
+          1913
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(1).apply(1).==(grid.apply(2).apply(2))
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          55
+        </td>
+        <td>
+          1845
+          -
+          1846
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          64
+        </td>
+        <td>
+          1903
+          -
+          1913
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(2).apply(2)
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          58
+        </td>
+        <td>
+          1866
+          -
+          1867
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          61
+        </td>
+        <td>
+          1861
+          -
+          1885
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(0).apply(0).==(grid.apply(1).apply(1))
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          60
+        </td>
+        <td>
+          1875
+          -
+          1885
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(1).apply(1)
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          63
+        </td>
+        <td>
+          1897
+          -
+          1898
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          1
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          57
+        </td>
+        <td>
+          1854
+          -
+          1857
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;.&quot;
+        </td>
+      </tr><tr>
+        <td>
+          72
+        </td>
+        <td>
+          66
+        </td>
+        <td>
+          1840
+          -
+          1913
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Boolean.&amp;&amp;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(0).apply(0).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(0).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(2)))
+        </td>
+      </tr><tr>
+        <td>
+          73
+        </td>
+        <td>
+          68
+        </td>
+        <td>
+          1920
+          -
+          1938
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.player
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.player(grid.apply(0).apply(0))
+        </td>
+      </tr><tr>
+        <td>
+          73
+        </td>
+        <td>
+          67
+        </td>
+        <td>
+          1927
+          -
+          1937
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(0).apply(0)
+        </td>
+      </tr><tr>
+        <td>
+          73
+        </td>
+        <td>
+          69
+        </td>
+        <td>
+          1920
+          -
+          1938
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.player
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.player(grid.apply(0).apply(0))
+        </td>
+      </tr><tr>
+        <td>
+          74
+        </td>
+        <td>
+          87
+        </td>
+        <td>
+          1948
+          -
+          2075
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          if (grid.apply(0).apply(2).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(0))))
+  TicTacToe.this.player(grid.apply(0).apply(2))
+else
+  &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          77
+        </td>
+        <td>
+          2013
+          -
+          2014
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          1
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          80
+        </td>
+        <td>
+          2008
+          -
+          2032
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(1).apply(1).==(grid.apply(2).apply(0))
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          71
+        </td>
+        <td>
+          1967
+          -
+          1968
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          2
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          74
+        </td>
+        <td>
+          1988
+          -
+          1989
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          2
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          73
+        </td>
+        <td>
+          1985
+          -
+          1986
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          76
+        </td>
+        <td>
+          1980
+          -
+          2004
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(0).apply(2).==(grid.apply(1).apply(1))
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          79
+        </td>
+        <td>
+          2022
+          -
+          2032
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(2).apply(0)
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          70
+        </td>
+        <td>
+          1964
+          -
+          1965
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          78
+        </td>
+        <td>
+          2016
+          -
+          2017
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          1
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          72
+        </td>
+        <td>
+          1973
+          -
+          1976
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;.&quot;
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          81
+        </td>
+        <td>
+          1959
+          -
+          2032
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Boolean.&amp;&amp;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(0).apply(2).!=(&quot;.&quot;).&amp;&amp;(grid.apply(0).apply(2).==(grid.apply(1).apply(1))).&amp;&amp;(grid.apply(1).apply(1).==(grid.apply(2).apply(0)))
+        </td>
+      </tr><tr>
+        <td>
+          75
+        </td>
+        <td>
+          75
+        </td>
+        <td>
+          1994
+          -
+          2004
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(1).apply(1)
+        </td>
+      </tr><tr>
+        <td>
+          76
+        </td>
+        <td>
+          83
+        </td>
+        <td>
+          2039
+          -
+          2057
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.player
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.player(grid.apply(0).apply(2))
+        </td>
+      </tr><tr>
+        <td>
+          76
+        </td>
+        <td>
+          82
+        </td>
+        <td>
+          2046
+          -
+          2056
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          grid.apply(0).apply(2)
+        </td>
+      </tr><tr>
+        <td>
+          76
+        </td>
+        <td>
+          84
+        </td>
+        <td>
+          2039
+          -
+          2057
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.player
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          TicTacToe.this.player(grid.apply(0).apply(2))
+        </td>
+      </tr><tr>
+        <td>
+          77
+        </td>
+        <td>
+          86
+        </td>
+        <td>
+          2067
+          -
+          2075
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          77
+        </td>
+        <td>
+          85
+        </td>
+        <td>
+          2067
+          -
+          2075
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          81
+        </td>
+        <td>
+          94
+        </td>
+        <td>
+          2166
+          -
+          2188
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(0).apply(column).==(&quot;.&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          82
+        </td>
+        <td>
+          95
+        </td>
+        <td>
+          2198
+          -
+          2206
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          82
+        </td>
+        <td>
+          96
+        </td>
+        <td>
+          2198
+          -
+          2206
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          84
+        </td>
+        <td>
+          108
+        </td>
+        <td>
+          2226
+          -
+          2393
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          if (grid.apply(0).apply(column).==(grid.apply(1).apply(column)).&amp;&amp;(grid.apply(1).apply(column).==(grid.apply(2).apply(column))))
+  TicTacToe.this.player(grid.apply(0).apply(column))
+else
+  &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          85
+        </td>
+        <td>
+          101
+        </td>
+        <td>
+          2277
+          -
+          2311
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(1).apply(column).==(grid.apply(2).apply(column))
+        </td>
+      </tr><tr>
+        <td>
+          85
+        </td>
+        <td>
+          98
+        </td>
+        <td>
+          2258
+          -
+          2273
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(1).apply(column)
+        </td>
+      </tr><tr>
+        <td>
+          85
+        </td>
+        <td>
+          100
+        </td>
+        <td>
+          2296
+          -
+          2311
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(2).apply(column)
+        </td>
+      </tr><tr>
+        <td>
+          85
+        </td>
+        <td>
+          97
+        </td>
+        <td>
+          2244
+          -
+          2245
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          85
+        </td>
+        <td>
+          99
+        </td>
+        <td>
+          2282
+          -
+          2283
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          1
+        </td>
+      </tr><tr>
+        <td>
+          85
+        </td>
+        <td>
+          102
+        </td>
+        <td>
+          2239
+          -
+          2311
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Boolean.&amp;&amp;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(0).apply(column).==(grid.apply(1).apply(column)).&amp;&amp;(grid.apply(1).apply(column).==(grid.apply(2).apply(column)))
+        </td>
+      </tr><tr>
+        <td>
+          87
+        </td>
+        <td>
+          104
+        </td>
+        <td>
+          2330
+          -
+          2353
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.player
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.player(grid.apply(0).apply(column))
+        </td>
+      </tr><tr>
+        <td>
+          87
+        </td>
+        <td>
+          103
+        </td>
+        <td>
+          2337
+          -
+          2352
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(0).apply(column)
+        </td>
+      </tr><tr>
+        <td>
+          87
+        </td>
+        <td>
+          105
+        </td>
+        <td>
+          2330
+          -
+          2353
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.player
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.player(grid.apply(0).apply(column))
+        </td>
+      </tr><tr>
+        <td>
+          89
+        </td>
+        <td>
+          107
+        </td>
+        <td>
+          2377
+          -
+          2385
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          89
+        </td>
+        <td>
+          106
+        </td>
+        <td>
+          2377
+          -
+          2385
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          95
+        </td>
+        <td>
+          109
+        </td>
+        <td>
+          2489
+          -
+          2508
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(row).apply(0).==(&quot;.&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          96
+        </td>
+        <td>
+          110
+        </td>
+        <td>
+          2518
+          -
+          2526
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          96
+        </td>
+        <td>
+          111
+        </td>
+        <td>
+          2518
+          -
+          2526
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          98
+        </td>
+        <td>
+          113
+        </td>
+        <td>
+          2566
+          -
+          2578
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(row).apply(1)
+        </td>
+      </tr><tr>
+        <td>
+          98
+        </td>
+        <td>
+          116
+        </td>
+        <td>
+          2582
+          -
+          2610
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(row).apply(1).==(grid.apply(row).apply(2))
+        </td>
+      </tr><tr>
+        <td>
+          98
+        </td>
+        <td>
+          115
+        </td>
+        <td>
+          2598
+          -
+          2610
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(row).apply(2)
+        </td>
+      </tr><tr>
+        <td>
+          98
+        </td>
+        <td>
+          112
+        </td>
+        <td>
+          2560
+          -
+          2561
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          98
+        </td>
+        <td>
+          123
+        </td>
+        <td>
+          2546
+          -
+          2682
+        </td>
+        <td>
+          If
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          if (grid.apply(row).apply(0).==(grid.apply(row).apply(1)).&amp;&amp;(grid.apply(row).apply(1).==(grid.apply(row).apply(2))))
+  TicTacToe.this.player(grid.apply(row).apply(0))
+else
+  &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          98
+        </td>
+        <td>
+          114
+        </td>
+        <td>
+          2592
+          -
+          2593
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          1
+        </td>
+      </tr><tr>
+        <td>
+          98
+        </td>
+        <td>
+          117
+        </td>
+        <td>
+          2550
+          -
+          2610
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Boolean.&amp;&amp;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(row).apply(0).==(grid.apply(row).apply(1)).&amp;&amp;(grid.apply(row).apply(1).==(grid.apply(row).apply(2)))
+        </td>
+      </tr><tr>
+        <td>
+          99
+        </td>
+        <td>
+          119
+        </td>
+        <td>
+          2622
+          -
+          2642
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.player
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.player(grid.apply(row).apply(0))
+        </td>
+      </tr><tr>
+        <td>
+          99
+        </td>
+        <td>
+          118
+        </td>
+        <td>
+          2629
+          -
+          2641
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.Vector.apply
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          grid.apply(row).apply(0)
+        </td>
+      </tr><tr>
+        <td>
+          99
+        </td>
+        <td>
+          120
+        </td>
+        <td>
+          2622
+          -
+          2642
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.TicTacToe.player
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          TicTacToe.this.player(grid.apply(row).apply(0))
+        </td>
+      </tr><tr>
+        <td>
+          101
+        </td>
+        <td>
+          122
+        </td>
+        <td>
+          2666
+          -
+          2674
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;Nobody&quot;
+        </td>
+      </tr><tr>
+        <td>
+          101
+        </td>
+        <td>
+          121
+        </td>
+        <td>
+          2666
+          -
+          2674
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td>
+          fr.esgi.iabd.tictactoe.tictactoespec
+        </td>
+        <td style="background: #AEF1AE">
+          &quot;Nobody&quot;
+        </td>
+      </tr>
+    </table>
+          </div>
+        </div>
+      </body>
+    </html>

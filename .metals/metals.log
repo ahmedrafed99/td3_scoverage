@@ -1,0 +1,71 @@
+2023.05.23 15:36:52 INFO  Started: Metals version 0.11.12 in workspace 'E:\Downloads\td3_scoverage\td3_scoverage' for client Visual Studio Code 1.78.2.
+May 23, 2023 3:36:52 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+May 23, 2023 3:36:52 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+May 23, 2023 3:36:52 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+May 23, 2023 3:36:52 PM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:E:\Downloads\td3_scoverage\td3_scoverage\.metals\metals (H2 2.1)
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.025s)
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": << Empty Schema >>
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "1 - Create tables"
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "2 - Server discovery"
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "3 - Jar symbols"
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "4 - Fingerprints"
+May 23, 2023 3:36:53 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.047s)
+2023.05.23 15:36:53 INFO  time: initialize in 0.82s
+2023.05.23 15:36:53 WARN  Build server is not auto-connectable.
+2023.05.23 15:36:54 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+2023.05.23 15:36:58 INFO  no build target found for E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.05.23 15:37:00 INFO  time: code lens generation in 6.26s
+2023.05.23 15:37:04 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\build.sbt
+2023.05.23 15:37:09 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\build.sbt
+2023.05.23 15:37:42 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\build.sbt
+2023.05.23 15:37:42 INFO  skipping build import with status 'Dismissed'
+2023.05.23 15:53:02 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\project\plugins.sbt
+2023.05.23 15:53:11 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\build.sbt
+2023.05.23 15:53:26 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\project\plugins.sbt
+2023.05.23 15:53:27 INFO  skipping build import with status 'Dismissed'
+2023.05.23 15:54:06 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\build.sbt
+2023.05.23 15:54:06 INFO  skipping build import with status 'Dismissed'
+2023.05.23 15:54:07 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\build.sbt
+2023.05.23 15:54:07 INFO  skipping build import with status 'Dismissed'
+2023.05.23 16:06:46 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\src\test\scala\fr\esgi\iabd\tictactoe\TicTacToeSpec.scala
+2023.05.23 16:07:06 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+2023.05.28 20:05:11 INFO  Started: Metals version 0.11.12 in workspace 'E:\Downloads\td3_scoverage\td3_scoverage' for client Visual Studio Code 1.78.2.
+May 28, 2023 8:05:11 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+May 28, 2023 8:05:11 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+May 28, 2023 8:05:11 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+May 28, 2023 8:05:58 PM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:E:\Downloads\td3_scoverage\td3_scoverage\.metals\metals (H2 2.1)
+May 28, 2023 8:05:59 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.033s)
+May 28, 2023 8:05:59 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+May 28, 2023 8:05:59 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.05.28 20:05:59 INFO  time: initialize in 5.72s
+2023.05.28 20:06:01 WARN  Build server is not auto-connectable.
+2023.05.28 20:06:01 WARN  no build target for: E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala
+2023.05.28 20:06:09 INFO  no build target found for E:\Downloads\td3_scoverage\td3_scoverage\src\main\scala\fr\esgi\iabd\tictactoe\TicTacToe.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.05.28 20:06:13 INFO  time: code lens generation in 12s
+May 28, 2023 8:09:29 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.05.28 20:11:50 INFO  Shutting down server
+2023.05.28 20:11:50 INFO  shutting down Metals
+2023.05.28 20:11:50 INFO  Exiting server

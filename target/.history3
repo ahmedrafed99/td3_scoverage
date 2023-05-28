@@ -1,0 +1,10 @@
+1684848889010:test
+1684848922047:addSbtPlugin("org.scoverage"%"sbt-scoverage"%"1.9.3")
+1684848926652:exit
+1684848939441:addSbtPlugin("org.scoverage"%"sbt-scoverage"%"1.9.3")
+1684849065646:test
+1684849074887:exit
+1684850021016:test
+1684850058139:exit
+1684850069667:test
+1684850106353:coverageReport
